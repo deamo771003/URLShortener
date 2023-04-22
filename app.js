@@ -2,6 +2,11 @@ const express = require("express")
 const app = express()
 const hbs = require('express-handlebars')
 const bodyParser = require('body-parser')
+const methodOverride = require('method-override')
+require('./config/mongoose')
+
+// method-override
+app.use(methodOverride('_method'))
 
 // dotenv
 if (process.env.NODE_ENV !== 'production') {
