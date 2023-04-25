@@ -25,9 +25,9 @@ app.post('/', (req, res) => {
 app.engine('hbs', hbs({ defaultLayout: 'main', extname: '.hbs' }))
 app.set('view engine', 'hbs')
 
-app.get('/', (req, res) => {
-  res.render('index')
-})
+// router
+const routes = require('./routes')
+app.use(routes)
 
 app.listen(3500, () => {
   console.log('app is running on port 3500')

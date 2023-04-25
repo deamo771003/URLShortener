@@ -1,0 +1,32 @@
+<div class="container">
+  <div class="row d-flex justify-content-center mt-5">
+    <img class="index-img"
+      src="https://assets-lighthouse.alphacamp.co/uploads/image/file/16716/ExportedContentImage_00.png" alt="img"
+      style="max-width:30%; height: auto;">
+  </div>
+  <div class="d-flex justify-content-center mt-5">
+    <h1>Success! Please use this link:</h1>
+  </div>
+
+  <div class="d-flex justify-content-center mt-1">
+    <a id="urlShortener" href="/short/{{urlShortener.random}}"
+      value="http://localhost:3500/short/{{urlShortener.random}}">http://localhost:3500/short/{{urlShortener.random}}</a>
+  </div>
+
+  <div class="submit d-flex justify-content-center mt-5" style="weight:100px;">
+    <button class="btn btn-primary" onclick="copy()">Copy</button>
+  </div>
+  <script>
+    function copy() {
+      const urlShortener = document.getElementById('urlShortener').innerText
+      navigator.clipboard.writeText(urlShortener)
+        .then(() => {
+          alert('已複製到剪貼簿: ' + urlShortener)
+        })
+        .catch(err => {
+          console.error('複製失敗:', err)
+        });
+    }
+  </script>
+
+</div>

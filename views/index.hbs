@@ -1,32 +1,43 @@
 <div class="container">
-  <div class="d-flex justify-content-center mt-5">
+  <div class="row d-flex justify-content-center mt-5">
     <img class="index-img"
       src="https://assets-lighthouse.alphacamp.co/uploads/image/file/16716/ExportedContentImage_00.png" alt="img"
       style="max-width:30%; height: auto;">
   </div>
-  <div class="d-flex justify-content-center mt-5">
-    <form class="row" action="/restaurants" method="POST">
-      <input type="text" class="form-control" id="validationServer01" placeholder="Input URL here..." name="name"
+
+  <form class="form" action="/short" method="POST">
+    {{!-- <div class="d-flex justify-content-center mt-5"> --}}
+      <input type="text" class="form-control mt-5" id="validationServer01" placeholder="Input URL here..." name="url"
         value="" required>
+
       <div id="validationServer01Feedback" class="valid-feedback">
         Looks good!
       </div>
       <div id="validationServer01Feedback" class="invalid-feedback">
         Input error!
       </div>
-      <script>
-        const input = document.getElementById('validationServer01')
-        input.classList.add('is-invalid')
-        input.addEventListener("change", function () {
-          if (input.value.length > 0) {
-            input.classList.remove('is-invalid')
-            input.classList.add('is-valid')
-          } else {
-            input.classList.remove('is-valid')
-            input.classList.add('is-invalid')
-          }
-        })
-      </script>
-    </form>
-  </div>
+      {{!--
+    </div> --}}
+
+    <script>
+      const input = document.getElementById('validationServer01')
+      input.classList.add('is-invalid')
+      input.addEventListener("change", function () {
+        if (input.value.length > 0) {
+          input.classList.remove('is-invalid')
+          input.classList.add('is-valid')
+        } else {
+          input.classList.remove('is-valid')
+          input.classList.add('is-invalid')
+        }
+      })
+    </script>
+
+    <div class="submit d-flex justify-content-center mt-1" style="weight:100px;">
+      <button class="btn btn-primary" type="submit">Submit</button>
+      {{!-- <a class="btn btn-primary" onclick="postData()" href="/urlShortener/{{urlShortener._id}}"
+        role="button">Submit</a> --}}
+    </div>
+
+  </form>
 </div>
