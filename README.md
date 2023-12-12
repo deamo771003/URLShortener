@@ -1,5 +1,5 @@
 # URL Shortener 縮址網
-使用Node.js + Exoress 打造的縮址網站，簡單操作 輕鬆縮址
+使用Node.js + Express 打造的縮址網站，簡單操作 輕鬆縮址
 
 ## 專案畫面
 index:
